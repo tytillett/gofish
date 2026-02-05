@@ -7,7 +7,6 @@ import { getComputerMove } from './utils/computerPlayer';
 import * as SFX from './utils/soundEffects';
 
 const INITIAL_HAND_SIZE = 5; 
-const TURN_DELAY_MS = 2000; // Slow down actions
 
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -414,7 +413,7 @@ const App: React.FC = () => {
 
         {/* Computer Hand (Backs) */}
         <div className="mt-12 flex -space-x-8 sm:-space-x-4 overflow-visible px-8 py-4">
-            {gameState.computer.hand.map((card, index) => (
+            {gameState.computer.hand.map((_, index) => (
                 <div key={index} className="transform transition-transform duration-300" style={{ zIndex: index }}>
                     <CardComponent size="sm" /> 
                 </div>

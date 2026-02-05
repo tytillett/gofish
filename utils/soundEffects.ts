@@ -68,7 +68,6 @@ export const playDraw = () => {
 
 export const playWin = () => {
   // Fanfare
-  const now = 0;
   [523.25, 523.25, 523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
       const timing = i < 3 ? i * 0.15 : 0.45 + (i-3) * 0.2; // Triplets then melody
       playTone(freq, 'square', 0.2, timing, 0.05);
